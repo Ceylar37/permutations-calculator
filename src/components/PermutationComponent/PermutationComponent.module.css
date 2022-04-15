@@ -1,0 +1,20 @@
+.permutation {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr repeat(4, 1fr);
+    column-gap: 5px;
+    padding: 20px;
+}
+
+.permutation > div {
+    justify-self: center;
+}
+
+.name {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    align-self: center;
+    font-size: 20px;
+}
