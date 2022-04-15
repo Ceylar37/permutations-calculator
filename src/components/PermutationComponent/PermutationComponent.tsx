@@ -3,14 +3,14 @@ import styles from "./PermutationComponent.module.css";
 import {Input} from "antd";
 
 interface PermutationComponentProps {
-    name: string
+    name: React.ReactNode
     permutationValues: (number | '')[]
     onPermutationValueChange?: (value: number | '', index: number) => void,
     size: number
     readonly?: boolean
 }
 
-const PermutationComponent: React.FC<PermutationComponentProps> = (
+const PermutationComponent: React.FC<PermutationComponentProps> = React.memo((
     {permutationValues, onPermutationValueChange, size, name, readonly}
 ) => {
     return (
@@ -40,6 +40,6 @@ const PermutationComponent: React.FC<PermutationComponentProps> = (
             )}
         </div>
     );
-};
+});
 
 export default PermutationComponent;

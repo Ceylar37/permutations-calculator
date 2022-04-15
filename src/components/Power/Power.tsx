@@ -10,7 +10,7 @@ import {
 } from "../../utils";
 import {PermutationComponent} from "../PermutationComponent";
 
-const Power: React.FC<SizeProp> = ({size}) => {
+const Power: React.FC<SizeProp> = React.memo(({size}) => {
 
     const [permutationValues, setPermutationValues] = useState<(number | '')[]>(clearArr(size))
     const setPermutation = createSetPermutation(setPermutationValues)
@@ -112,6 +112,6 @@ const Power: React.FC<SizeProp> = ({size}) => {
             </Row>
         </Col>
     );
-};
+});
 
 export default Power;

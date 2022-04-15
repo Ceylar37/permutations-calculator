@@ -10,7 +10,7 @@ import {
     createSetPermutation
 } from "../../utils";
 
-const Order: React.FC<SizeProp> = ({size}) => {
+const Order: React.FC<SizeProp> = React.memo(({size}) => {
 
     const [permutationValues, setPermutationValues] = useState<(number | '')[]>(clearArr(size))
     const [order, setOrder] = useState<number | null>(null)
@@ -74,6 +74,6 @@ const Order: React.FC<SizeProp> = ({size}) => {
             </Row>
         </Col>
     );
-};
+});
 
 export default Order;

@@ -13,7 +13,7 @@ const calculate = (firstPermutationValues: number[], secondPermutationValues: nu
     return answer
 }
 
-const Multiple: React.FC<SizeProp> = ({size}) => {
+const Multiple: React.FC<SizeProp> = React.memo(({size}) => {
 
     useLayoutEffect(() => {
         setFirstPermutationValues(clearArr(size))
@@ -75,6 +75,6 @@ const Multiple: React.FC<SizeProp> = ({size}) => {
             </Row>
         </Col>
     );
-};
+});
 
 export default Multiple;

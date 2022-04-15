@@ -5,8 +5,9 @@ import 'antd/dist/antd.css'
 import {Multiple} from "./components/Multiple";
 import {Order} from "./components/Order";
 import {Power} from "./components/Power";
+import {Reversed} from "./components/Reversed";
 
-type Operation = 'multiple' | 'order' | 'power'
+type Operation = 'multiple' | 'order' | 'power' | 'reversed'
 const nums: number[] = (new Array(7)
         .fill(0)
         .map((el, i) => i + 4)
@@ -46,6 +47,11 @@ const App = () => {
                             >
                                 Возведение в степень
                             </Select.Option>
+                            <Select.Option
+                                value='reversed'
+                            >
+                                Обратная
+                            </Select.Option>
                         </Select>
                     </Col>
                     <Col>
@@ -77,6 +83,7 @@ const App = () => {
                 {curOperation === 'multiple' && <Multiple size={size}/>}
                 {curOperation === 'order' && <Order size={size}/>}
                 {curOperation === 'power' && <Power size={size}/>}
+                {curOperation === 'reversed' && <Reversed size={size}/>}
             </Layout.Content>
         </Layout>
     )
